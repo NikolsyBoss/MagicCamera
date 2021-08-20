@@ -1,13 +1,14 @@
 package com.seu.magiccamera.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.seu.magiccamera.R;
 import com.seu.magiccamera.helper.FilterTypeHelper;
@@ -46,7 +47,7 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterHold
     }
 
     @Override
-    public void onBindViewHolder(FilterHolder holder,final int position) {
+    public void onBindViewHolder(FilterHolder holder, final int position) {
         holder.thumbImage.setImageResource(FilterTypeHelper.FilterType2Thumb(filters[position]));
         holder.filterName.setText(FilterTypeHelper.FilterType2Name(filters[position]));
         holder.filterName.setBackgroundColor(context.getResources().getColor(

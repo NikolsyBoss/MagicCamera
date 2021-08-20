@@ -1,14 +1,21 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion = 23
-    buildToolsVersion "25.0.2"
+    compileSdkVersion = 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion = 18
-        targetSdkVersion = 23
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = "com.seu.magicfilter"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
     }
     buildTypes {
         release {
@@ -19,6 +26,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
 }
